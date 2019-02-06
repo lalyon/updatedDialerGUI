@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="phone.css">
+  </head>
+  <body>
+    <div class="tab_bar" id="tab_bar">
+      <button class="tab_btn" id="dialer_tab_btn"> Dialer Tab Button </button>
+      <button class="tab_btn" id="contacts_tab_btn"> Contact List Tab Button </button>
+      <button class="tab_btn" id="add_tab_btn"> Add Tab Button </button>
+    </div>
+
+      <div class="content" id="content">
+
+        <div class = "tab" id="content_dialer">
+          <h2> Dialer </h2>
+          <form>
+            <input id="telephone_number" value="">
+          </form>
+
+          <div class="num_row">
+
+              <div class="numpad_btn">
+                <button class="txt"> 1 </button>
+              </div>
+
+              <div class="numpad_btn">
+                <button class="txt"> 2 </button>
+              </div>
+
+              <div class="numpad_btn">
+                <button class="txt"> 3 </button>
+              </div>
+          </div>
+
+          <div class="num_row">
+
+              <div class="numpad_btn">
+                <button class="txt"> 4 </button>
+              </div>
+
+              <div class="numpad_btn">
+                <button class="txt"> 5 </button>
+              </div>
+
+              <div class="numpad_btn">
+                <button class="txt"> 6 </button>
+              </div>
+          </div>
+
+          <div class="num_row">
+
+              <div class="numpad_btn">
+                <button class="txt"> 7 </button>
+              </div>
+
+              <div class="numpad_btn">
+                <button class="txt"> 8 </button>
+              </div>
+
+              <div class="numpad_btn">
+                <button class="txt"> 9 </button>
+              </div>
+          </div>
+
+          <div class="num_row">
+
+            <div class="numpad_btn">
+              <button class="txt"> * </button>
+            </div>
+
+            <div class="numpad_btn">
+              <button class="txt"> 0 </button>
+            </div>
+
+            <div class="numpad_btn">
+              <button class="txt"> # </button>
+            </div>
+
+          </div>
+
+          <div class="num_row">
+            <div class="numpad_btn">
+              <button class="dialer_fn_btn"> Dial </button>
+            </div>
+
+            <div class="numpad_btn">
+              <button class="dialer_fn_btn"> Clear </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab" id="content_contacts">
+          <h2> Contact List </h2>
+
+        </div>
+
+        <div class="tab" id="content_add">
+          <h2> Add Contact </h2>
+          <ul id="contacts_list"></ul>
+
+
+          <h3> Name </h3>
+          <input type="text" id="contact_name"/>
+          <h3> Phone Number </h3>
+          <input type="text" id="contact_phone"></input>
+          <h3> Email </h3>
+          <input type="text" id="contact_email"></input>
+          <br></br>
+          <button onclick="addItem()">Add Contact</button>
+          <button onclick="addItem()">Clear</button>
+
+          <ul id="contact_list"></ul>
+
+          <input type="text" id="name"/>
+          <button onclick="addItem()">add item</button>
+          <button onclick="removeItem()">remove item</button>
+        </div>
+
+      </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="phone.js"></script>
+  </body>
+</html>
