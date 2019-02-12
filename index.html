@@ -4,15 +4,17 @@
     <link rel="stylesheet" href="phone.css">
   </head>
   <body>
-    <div class="tab_bar" id="tab_bar">
-      <button class="tab_btn" id="dialer_tab_btn"> Dialer Tab Button </button>
-      <button class="tab_btn" id="contacts_tab_btn"> Contact List Tab Button </button>
-      <button class="tab_btn" id="add_tab_btn"> Add Tab Button </button>
+    <div class="tab_bar" id="tab_bar" role="navigation">
+      <button class="tab_btn" id="dialer_tab_btn" accesskey="d"> Dialer Tab Button </button>
+      <button class="tab_btn" id="contacts_tab_btn" accesskey="c"> Contact List Tab Button </button>
+      <button class="tab_btn" id="add_tab_btn" accesskey="a"> Add Tab Button </button>
+      <button class="tab_btn" id="help_tab_btn" accesskey="h"> Help Tab Button </button>
     </div>
 
       <div class="content" id="content">
 
-        <div class = "tab" id="content_dialer">
+        <div class = "tab" id="content_dialer" role="main" aria-live="polite">
+
           <h2> Dialer </h2>
           <form>
             <input id="telephone_number" value="">
@@ -21,81 +23,107 @@
           <div class="num_row">
 
               <div class="numpad_btn">
-                <button class="txt"> 1 </button>
+                <button class="txt" accesskey="1"> 1 </button>
               </div>
 
               <div class="numpad_btn">
-                <button class="txt"> 2 </button>
+                <button class="txt" accesskey="2"> 2 </button>
               </div>
 
               <div class="numpad_btn">
-                <button class="txt"> 3 </button>
+                <button class="txt" accesskey="3"> 3 </button>
               </div>
           </div>
 
           <div class="num_row">
 
               <div class="numpad_btn">
-                <button class="txt"> 4 </button>
+                <button class="txt" accesskey="4"> 4 </button>
               </div>
 
               <div class="numpad_btn">
-                <button class="txt"> 5 </button>
+                <button class="txt" accesskey="5"> 5 </button>
               </div>
 
               <div class="numpad_btn">
-                <button class="txt"> 6 </button>
+                <button class="txt" accesskey="6"> 6 </button>
               </div>
           </div>
 
           <div class="num_row">
 
               <div class="numpad_btn">
-                <button class="txt"> 7 </button>
+                <button class="txt" accesskey="7"> 7 </button>
               </div>
 
               <div class="numpad_btn">
-                <button class="txt"> 8 </button>
+                <button class="txt" accesskey="8"> 8 </button>
               </div>
 
               <div class="numpad_btn">
-                <button class="txt"> 9 </button>
+                <button class="txt" accesskey="9"> 9 </button>
               </div>
           </div>
 
           <div class="num_row">
 
             <div class="numpad_btn">
-              <button class="txt"> * </button>
+              <button class="txt" accesskey="s"> * </button>
             </div>
 
             <div class="numpad_btn">
-              <button class="txt"> 0 </button>
+              <button class="txt" accesskey="0"> 0 </button>
             </div>
 
             <div class="numpad_btn">
-              <button class="txt"> # </button>
+              <button class="txt" accesskey="p"> # </button>
             </div>
 
           </div>
 
           <div class="num_row">
             <div class="numpad_btn">
-              <button class="dialer_fn_btn"> Dial </button>
+              <button class="dialer_fn_btn" accesskey="e"> Dial </button>
             </div>
 
             <div class="numpad_btn">
-              <button class="dialer_fn_btn"> Clear </button>
+              <button class="dialer_fn_btn" accesskey="l"> Clear </button>
             </div>
           </div>
-        </div>
 
-        <div class="tab" id="content_contacts">
+			</div>
+
+
+        <div class="tab" id="content_contacts" role="main" aria-live="polite">
+
           <h2> Contact List </h2>
+          <table class="table">
+            <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+				<th>Profile Picture</th>
+          </tr>
+          <tr>
+            <td>Luke Lyon</td>
+            <td>Lucas.lyon@colorado.edu</td>
+            <td>555-555-5555</td>
+				<td><figure> <img src="headshot.jpg" alt="Heashot of Luke" height="128" width="128"><figcaption>Headshot of Luke</figcaption></figure></td>
+          </tr>
+          <tr>
+            <td>Alexandria Ocasio-Cortez</td>
+            <td>Jane.doe@gmail.com</td>
+            <td>777-555-5555</td>
+				<td><figure><img src="aoc.jpg" alt="Headshot of Alexandria Ocasio-Cortez" height="128" width="128"><figcaption>Headshot of AOC</figcaption></figure></td>
+          </tr>
+
+          </table>
+
 
         </div>
 
-        <div class="tab" id="content_add">
+        <div class="tab" id="content_add" role="main" aria-live="polite">
+
           <h2> Add Contact </h2>
           <ul id="contacts_list"></ul>
 
@@ -110,12 +138,84 @@
           <button onclick="addItem()">Add Contact</button>
           <button onclick="addItem()">Clear</button>
 
-          <ul id="contact_list"></ul>
+          <!-- <ul id="contact_list"></ul>
 
           <input type="text" id="name"/>
           <button onclick="addItem()">add item</button>
-          <button onclick="removeItem()">remove item</button>
+          <button onclick="removeItem()">remove item</button> -->
         </div>
+
+        <div class="tab" id="content_help" role="main" aria-live="polite">
+          <h4> Accessibility Features </h4>
+          <ul>
+            <li>Tab Control</li>
+            <li>Keyboard Shortcuts</li>
+            <li>Contacts Table with header tags</li>
+            <li>Captioned Images</li>
+            <li>ARIA live regions</li>
+          </ul>
+
+          <h4>Keyboard Shortcuts</h4>
+          <table class="table">
+            <tr>
+            <th>Shortcut</th>
+            <th>Accessibility Feature</th>
+          </tr>
+          <tr>
+            <td>d</td>
+            <td>Dialer Tab</td>
+          </tr>
+          <tr>
+            <td>c</td>
+            <td>Contacts Tab</td>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>Add Contact Tab</td>
+          </tr>
+          <tr>
+            <td>h</td>
+            <td>Help Tab</td>
+          </tr>
+          <tr>
+            <td>Number Keys 0-9</td>
+            <td>Dial a number in the dialer field</td>
+          </tr>
+          <tr>
+            <td>p</td>
+            <td>Dial # in the dialer field</td>
+          </tr>
+          <tr>
+            <td>s</td>
+            <td>Dial * in the dialer field</td>
+          </tr>
+          <tr>
+            <td>l</td>
+            <td>Clear the dialer field</td>
+          </tr>
+          <tr>
+            <td>e</td>
+            <td>Dial the number in the dialer field</td>
+          </tr>
+
+          </table>
+
+        <br></br>
+			<figure>
+			<a href="http://www.lukelyon.com">
+			<img src="LinkedIn.png" alt="LinkedIn Logo" height="30" width="128">
+			<figcaption>LinkedIn Logo for contacting developer</figcaption>
+			</a>
+			</figure>
+      <br></br>
+			<figure>
+			<a href="mailto:email@example.com">
+			<img src="email.png" alt="Email Logo" heght="64" width="48">
+			<figcaption>Email icon for contacting developer</figcaption>
+        </a>
+			</figure>
+
+			</div>
 
       </div>
 
